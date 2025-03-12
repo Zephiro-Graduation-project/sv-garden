@@ -4,7 +4,7 @@ services:
     build:
       context: .  
       dockerfile: Dockerfile  
-    container_name: sv-content
+    container_name: sv-garden
     ports:
       - "${PORT}:${PORT}"  
     environment:

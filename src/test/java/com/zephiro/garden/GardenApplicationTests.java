@@ -1,10 +1,10 @@
-package com.zephiro.tracker;
+package com.zephiro.garden;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class TrackerApplicationTests {
+class GardenApplicationTests {
 
 	@Test
 	void contextLoads() {
