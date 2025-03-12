@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.zephiro</groupId>
-	<artifactId>tracker</artifactId>
+	<artifactId>garden</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>tracker</name>
+	<name>garden</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
