@@ -30,8 +30,7 @@ public class InventoryService {
     public List<Flower> getFlowersOnInventory(String userId) {
         return inventoryRepository.findByUserId(userId)
                 .orElseThrow(() -> new RuntimeException("User with the id: " + userId + " was not found"))
-                .getFlowers();
-        
+                .getFlowers();   
     }
 
     public Flower getFlowerById(String userId, int id) {

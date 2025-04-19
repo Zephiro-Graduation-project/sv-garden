@@ -71,7 +71,7 @@ public class GardenService {
     }
 
     //* Development team only 
-    public void stateReset() {
+    public void dailyReset() {
         // Get the inventory of all users
         List<Garden> gardens = gardenRepository.findAll();
 
