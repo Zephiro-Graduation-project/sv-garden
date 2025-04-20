@@ -17,13 +17,16 @@ public class Inventory {
     private List<Background> backgrounds;
     private List<Flower> flowers;
     private List<Achievement> achievements;
+
+    public Inventory() {
+    }
     
-    public Inventory(String userId, List<Achievement> achievements, Background defaultBackground) {
+    public Inventory(String userId, List<Achievement> achievements, Background background) {
         this.userId = userId;
         this.coins = 0;
         this.streak = 0;
         this.backgrounds = new ArrayList<>();
-        this.backgrounds.add(defaultBackground);
+        this.backgrounds.add(background);
         this.flowers = new ArrayList<>();
         this.achievements = achievements;
     }

@@ -27,7 +27,7 @@ public class InventoryController {
     private InventoryService inventoryService;
 
     @PostMapping("/add/{userId}")
-    public ResponseEntity<?> createInventory(@RequestBody String userId) {
+    public ResponseEntity<?> createInventory(@PathVariable String userId) {
         try {
             inventoryService.addInventory(userId);
             return ResponseEntity.status(HttpStatus.CREATED)

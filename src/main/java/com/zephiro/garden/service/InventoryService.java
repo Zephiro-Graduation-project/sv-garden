@@ -19,6 +19,7 @@ public class InventoryService {
     @Autowired
     private InventoryRepository inventoryRepository;
 
+    @Autowired
     private ShopService shopService;
     
     public void addInventory(String userId) {
@@ -30,7 +31,7 @@ public class InventoryService {
     public List<Flower> getFlowersOnInventory(String userId) {
         return inventoryRepository.findByUserId(userId)
                 .orElseThrow(() -> new RuntimeException("User with the id: " + userId + " was not found"))
-                .getFlowers();   
+                .getFlowers();
     }
 
     public Flower getFlowerById(String userId, int id) {
@@ -127,15 +128,20 @@ public class InventoryService {
         // Get the achivement #6 (Emergency Contact) from the inventory
         List<Achievement> allUa = inventory.getAchievements();
         Achievement ua = allUa.get(5);
-        ua.setCompleted(true);
-        allUa.set(5, ua);
-        inventory.setAchievements(allUa);
 
-        // Add coins to the user's inventory
-        inventory.setCoins(inventory.getCoins() + ua.getReward());
+        if(ua.isCompleted())
+            return;
+        else {
+            ua.setCompleted(true);
+            allUa.set(5, ua);
+            inventory.setAchievements(allUa);
 
-        // Save the updated inventory
-        inventoryRepository.save(inventory);
+            // Add coins to the user's inventory
+            inventory.setCoins(inventory.getCoins() + ua.getReward());
+
+            // Save the updated inventory
+            inventoryRepository.save(inventory);
+        }
     }
 
     public void rewardStreak(String userId, int streak) {
@@ -231,7 +237,7 @@ public class InventoryService {
             List<Achievement> allUa = inventory.getAchievements();
             for (int i=0; i < inventory.getAchievements().size(); i++) {
                 Achievement achievement = inventory.getAchievements().get(i);
-                if (achievement.getType().equals("Daily")) {
+                if (achievement.getType().equals("daily")) {
                     if (achievement.isCompleted()) {
                         achievement.setCompleted(false);
                         allUa.set(i, achievement);

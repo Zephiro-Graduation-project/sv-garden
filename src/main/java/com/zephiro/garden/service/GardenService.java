@@ -35,7 +35,7 @@ public class GardenService {
                 .orElseThrow(() -> new RuntimeException("User with the id: " + userId + " was not found"))
                 .getAchievements()
                 .stream()
-                .filter(achievement -> achievement.getId() == 7)
+                .filter(achievement -> achievement.getId() == 8)
                 .findFirst()
                 .orElseThrow(() -> new RuntimeException("User with the id: " + userId + " was not found"));
 
