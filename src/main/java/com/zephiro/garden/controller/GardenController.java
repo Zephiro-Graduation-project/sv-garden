@@ -31,9 +31,12 @@ public class GardenController {
             return ResponseEntity.status(HttpStatus.CREATED)
                     .body("{\"message\": \"Garden created successfully\"}");
             
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT)
+                .body("{\"error\": \"" + e.getMessage() + "\"}");
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("{\"error\": \"Error occurred while adding flower\"}");
+                    .body("{\"error\": \"Error occurred while creating garden\"}");
         }
     }
 

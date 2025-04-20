@@ -25,9 +25,13 @@ public class GardenService {
     private InventoryService inventoryService;
 
     public void addGarden(String userId) {
-        Background background = inventoryService.getBackgroundById(userId, 1);
-        Garden garden = new Garden(userId, background);
-        gardenRepository.save(garden);
+        if (gardenRepository.findByUserId(userId) != null) {
+            throw new RuntimeException("Garden already exists for user with id: " + userId);
+        } else {
+            Background background = inventoryService.getBackgroundById(userId, 1);
+            Garden garden = new Garden(userId, background);
+            gardenRepository.save(garden);
+        }
     }
 
     public Garden getGarden(String userId) {
@@ -51,13 +55,16 @@ public class GardenService {
     }
 
     public Flower getFlowerById(String userId, int id) {
-        return gardenRepository.findByUserId(userId)
+        List<Flower> flowers = gardenRepository.findByUserId(userId)
                 .orElseThrow(() -> new RuntimeException("User with the id: " + userId + " was not found"))
-                .getFlowers()
-                .stream()
-                .filter(flower -> flower.getId() == id)
-                .findFirst()
-                .orElseThrow(() -> new RuntimeException("Flower with id " + id + " was not found"));
+                .getFlowers();
+
+        for (Flower flower : flowers) {
+            if (flower != null && flower.getId() == id) {
+                return flower;
+            }
+        }
+        throw new RuntimeException("Flower with id " + id + " was not found");
     }
 
     public void updateGarden(String userId, Garden garden) {

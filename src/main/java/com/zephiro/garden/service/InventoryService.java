@@ -23,9 +23,13 @@ public class InventoryService {
     private ShopService shopService;
     
     public void addInventory(String userId) {
-        // Create a new inventory for the user with the given userId
-        Inventory inventory = new Inventory(userId, shopService.getAchievements(), shopService.getBackgroundById(1));
-        inventoryRepository.save(inventory);
+        // Create a new inventory for the user with the given userId if it doesn't exist
+        if (inventoryRepository.findByUserId(userId) != null) {
+            throw new RuntimeException("Inventory already exists for user with id: " + userId);
+        } else {
+            Inventory inventory = new Inventory(userId, shopService.getAchievements(), shopService.getBackgroundById(1));
+            inventoryRepository.save(inventory);
+        }
     }
 
     public List<Flower> getFlowersOnInventory(String userId) {
