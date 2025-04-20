@@ -152,6 +152,7 @@ public class InventoryService {
         // Get the inventory of the user with the given userId
         Inventory inventory = inventoryRepository.findByUserId(userId)
                 .orElseThrow(() -> new RuntimeException("User with the id: " + userId + " was not found"));
+        inventory.setStreak(streak);
         
         List<Achievement> allUa = inventory.getAchievements();
         Achievement ua;
@@ -172,8 +173,10 @@ public class InventoryService {
         } else if(streak == 50) {
             index = 4;
             ua = allUa.get(index);
-        } else
+        } else {
+            inventoryRepository.save(inventory);
             return;
+        }
 
         if(ua.isCompleted())
             return;
