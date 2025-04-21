@@ -24,7 +24,8 @@ public class InventoryService {
     
     public void addInventory(String userId) {
         // Create a new inventory for the user with the given userId if it doesn't exist
-        if (inventoryRepository.findByUserId(userId) != null) {
+        Inventory existingInventory = inventoryRepository.findByUserId(userId).orElse(null);
+        if (existingInventory != null) {
             throw new RuntimeException("Inventory already exists for user with id: " + userId);
         } else {
             Inventory inventory = new Inventory(userId, shopService.getAchievements(), shopService.getBackgroundById(1));

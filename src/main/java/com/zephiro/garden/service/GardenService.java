@@ -25,7 +25,8 @@ public class GardenService {
     private InventoryService inventoryService;
 
     public void addGarden(String userId) {
-        if (gardenRepository.findByUserId(userId) != null) {
+        Garden existingGarden = gardenRepository.findByUserId(userId).orElse(null);
+        if (existingGarden != null) {
             throw new RuntimeException("Garden already exists for user with id: " + userId);
         } else {
             Background background = inventoryService.getBackgroundById(userId, 1);
