@@ -24,25 +24,25 @@ public class DatabaseInit implements ApplicationRunner {
 
         // Create all flowers
         List<Flower> flowers = List.of(
-            new Flower(1, "Daisy", "Una flor sencilla, símbolo de esperanza y nuevos comienzos.", 30, "Daisy_1", "Daisy_1_Seca"),
-            new Flower(2, "Daisy", "Una flor sencilla, símbolo de esperanza y nuevos comienzos.", 30, "Daisy_2", "Daisy_2_Seca"),
-            new Flower(3, "Daisy", "Una flor sencilla, símbolo de esperanza y nuevos comienzos.", 30, "Daisy_3", "Daisy_3_Seca"),
+            new Flower(1, "Daisy", "Una flor sencilla, símbolo de esperanza y nuevos comienzos.", 30, "daisy_1", "daisy_1_seca"),
+            new Flower(2, "Daisy", "Una flor sencilla, símbolo de esperanza y nuevos comienzos.", 30, "daisy_2", "daisy_2_seca"),
+            new Flower(3, "Daisy", "Una flor sencilla, símbolo de esperanza y nuevos comienzos.", 30, "daisy_3", "daisy_3_seca"),
         
-            new Flower(4, "Estrella", "Brilla por su forma única, reflejando equilibrio y conexión interior.", 60, "Estrella_1", "Estrella_1_Seca"),
-            new Flower(5, "Estrella", "Brilla por su forma única, reflejando equilibrio y conexión interior.", 60, "Estrella_2", "Estrella_2_Seca"),
-            new Flower(6, "Estrella", "Brilla por su forma única, reflejando equilibrio y conexión interior.", 60, "Estrella_3", "Estrella_3_Seca"),
+            new Flower(4, "Estrella", "Brilla por su forma única, reflejando equilibrio y conexión interior.", 60, "estrella_1", "estrella_1_seca"),
+            new Flower(5, "Estrella", "Brilla por su forma única, reflejando equilibrio y conexión interior.", 60, "estrella_2", "estrella_2_seca"),
+            new Flower(6, "Estrella", "Brilla por su forma única, reflejando equilibrio y conexión interior.", 60, "estrella_3", "estrella_3_seca"),
         
-            new Flower(7, "Pansy", "Representa la reflexión, perfecta para momentos de introspección.", 100, "Pansy_1", "Pansy_1_Seca"),
-            new Flower(8, "Pansy", "Representa la reflexión, perfecta para momentos de introspección.", 100, "Pansy_2", "Pansy_2_Seca"),
-            new Flower(9, "Pansy", "Representa la reflexión, perfecta para momentos de introspección.", 100, "Pansy_3", "Pansy_3_Seca"),
+            new Flower(7, "Pansy", "Representa la reflexión, perfecta para momentos de introspección.", 100, "pansy_1", "pansy_1_seca"),
+            new Flower(8, "Pansy", "Representa la reflexión, perfecta para momentos de introspección.", 100, "pansy_2", "pansy_2_seca"),
+            new Flower(9, "Pansy", "Representa la reflexión, perfecta para momentos de introspección.", 100, "pansy_3", "pansy_3_seca"),
         
-            new Flower(10, "Tulipan", "Evoca elegancia y fuerza silenciosa, ideal para quienes perseveran.", 150, "Tulipan_1", "Tulipan_1_Seca"),
-            new Flower(11, "Tulipan", "Evoca elegancia y fuerza silenciosa, ideal para quienes perseveran.", 150, "Tulipan_2", "Tulipan_2_Seca"),
-            new Flower(12, "Tulipan", "Evoca elegancia y fuerza silenciosa, ideal para quienes perseveran.", 150, "Tulipan_3", "Tulipan_3_Seca"),
+            new Flower(10, "Tulipan", "Evoca elegancia y fuerza silenciosa, ideal para quienes perseveran.", 150, "tulipan_1", "tulipan_1_seca"),
+            new Flower(11, "Tulipan", "Evoca elegancia y fuerza silenciosa, ideal para quienes perseveran.", 150, "tulipan_2", "tulipan_2_seca"),
+            new Flower(12, "Tulipan", "Evoca elegancia y fuerza silenciosa, ideal para quienes perseveran.", 150, "tulipan_3", "tulipan_3_seca"),
         
-            new Flower(13, "Loto", "Emblema de sabiduría y pureza, florece incluso en la adversidad.", 200, "Loto_1", "Loto_1_Seca"),
-            new Flower(14, "Loto", "Emblema de sabiduría y pureza, florece incluso en la adversidad.", 200, "Loto_2", "Loto_2_Seca"),
-            new Flower(15, "Loto", "Emblema de sabiduría y pureza, florece incluso en la adversidad.", 200, "Loto_3", "Loto_3_Seca")
+            new Flower(13, "Loto", "Emblema de sabiduría y pureza, florece incluso en la adversidad.", 200, "loto_1", "loto_1_seca"),
+            new Flower(14, "Loto", "Emblema de sabiduría y pureza, florece incluso en la adversidad.", 200, "loto_2", "loto_2_seca"),
+            new Flower(15, "Loto", "Emblema de sabiduría y pureza, florece incluso en la adversidad.", 200, "loto_3", "loto_3_seca")
         );
         
         // Create all backgrounds
