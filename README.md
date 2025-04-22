@@ -5,8 +5,9 @@ Servicio de gamificación para el prototipo funcional
 Cosas a tener en cuenta para el proyecto:
 
 * El archivo ``.env`` esta incluido en el ``.gitignore``, revisen que lo tienen antes de ejecutar el servicio. 
-* Puedes acceder a la documentación en ``Swagger`` dando click [aqui](http://localhost:8080/swagger-ui/index.html).
+* Puedes acceder a la documentación en ``Swagger`` dando click [aqui](http://localhost:8060/swagger-ui/index.html).
 * Si está en el entorno ``dev`` deberas tener una instancia de ``MongoDB`` corriendo en un contenedor de docker.
+* Si está en el entorno ``test`` deberas registrar tu IP en [Atlas](https://www.mongodb.com/products/platform/atlas-database) con las credenciales del grupo.
 
 ### Configuración de MongoDB en Docker 🐳
 Para configurar la base de datos del entorno ``dev`` sigue estos pasos:
