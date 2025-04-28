@@ -27,6 +27,8 @@ public class SecurityConfig {
             .headers(headers -> headers.frameOptions(frame -> frame.disable()))
             .authorizeHttpRequests(requests -> requests
                 .requestMatchers("/h2/**").permitAll()
+                .requestMatchers("/inventory/dailyReset").permitAll()
+                .requestMatchers("/garden/dailyReset").permitAll()
                 .anyRequest().authenticated()
             )
             .exceptionHandling(exception -> exception.authenticationEntryPoint(jwtAuthEntryPoint));
